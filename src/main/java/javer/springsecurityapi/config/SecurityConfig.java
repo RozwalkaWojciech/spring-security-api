@@ -15,17 +15,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
+        UserDetails user = User.withDefaultPasswordEncoder()  //only for test
                 .username("user")
                 .password("user")
                 .roles("USER")
                 .build();
-        UserDetails moderator = User.withDefaultPasswordEncoder()
+        UserDetails moderator = User.withDefaultPasswordEncoder()  //only for test
                 .username("moderator")
                 .password("moderator")
                 .roles("MODERATOR")
                 .build();
-        UserDetails admin = User.withDefaultPasswordEncoder()
+        UserDetails admin = User.withDefaultPasswordEncoder()  //only for test
                 .username("admin")
                 .password("admin")
                 .roles("ADMIN")
@@ -44,6 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().permitAll()
                 .and()
-                .csrf().disable();
+                .csrf().disable();  //only for test POSTMAN test
     }
 }
